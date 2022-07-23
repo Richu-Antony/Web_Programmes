@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glocessary shop</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body{
+           background-image: linear-gradient(to right, rgba(255, 0, 0, 0.555) , rgba(255, 255, 0, 0.486));
+        }
+        
+        .main{
+            background-color: rgb(255, 255, 255);
+            border: 2px solid;
+            border-radius: 12px;
+        }
+
+        table{
+            width: 100%;
+            border-spacing: 10px;
+            background-color: rgb(152, 255, 215);
+            font-size: 16px;
+        }
+
+        input{
+            width: 100%;
+            font-size: 16px;
+        }
+
+        #calcbutt{
+            width: 100%;
+            background-image: url("Images/my drawing.png");
+            background-position: center;
+            background-attachment: fixed;
+            font-size: 16px;
+            font-weight: 900;
+            color: rgb(3, 137, 255);
+        }
+
+        #calcbutt:hover{
+            color: blue;
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+            cursor: pointer;
+        }
+
+    </style>
+    <script>
+        
+        function calc()
+        {
+            var UID, UNAME, UMOBILE;
+            var UITEM1, UITEM2, UITEM3, UITEM4, DISCOUNT, NETPAY, BILL;
+     
+            UNAME = document.formdata.id.value;
+            UID = document.formdata.name.value;
+            UMOBILE = document.formdata.mobile.value;
+            UITEM1 = document.formdata.item1.value;
+            UITEM2 = document.formdata.item2.value;
+            UITEM3 = document.formdata.item3.value;
+            UITEM4 = document.formdata.item4.value;
+           
+            BILL = ITEM1 + ITEM2 + ITEM3 + ITEM4;
+            DISCOUNT = (NETPAY * 100) / 3;
+            NETPAY = BILL - DISCOUNT;
+
+            document.formdata.bill.value = BILL;
+            document.formdata.discount.value = NETPAY;
+            document.formdata.netpay.value = DISCOUNT;
+
+            if(UID == ""){
+                window.alert("Please Enter The User ID");
+                document.formdata.name.focus();
+                return false;           
+            }
+            else if(UNAME == ""){
+                window.alert("Please Enter The Username");
+                document.formdata.id.focus();
+                return false; 
+            }
+            else if(UMOBILE == ""){
+                window.alert("Please Enter The Mobile");
+                document.formdata.desc.focus();
+                return false; 
+            }
+            else{
+                window.alert("Validation Successfully"); 
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 align="center">GLOCESSARY SHOP</h1>
+    <div class="main">
+        <form action="#" name="formdata" class="formpart">
+            <center>
+                <table border="3px solid">
+                    <tr>
+                        <td><b>ID: </b></td>
+                        <td><input type="text" name="id" id="namef" placeholder="Enter your id" maxlenght="30" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>USERNAME:</b> </td>
+                        <td><input type="text" name="name" id="idf" placeholder="Enter the user name" maxlenght="12" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>MOBILE NO: </b></td>
+                        <td><input type="number" name="mobile" id="descf" placeholder="Enter the mobile no" maxlenght="1" required></td>
+                    </tr>
+                    <tr>
+                        <td>ITEM 1</td> 
+                        <td><input type="text" name="item1"></td>
+                    </tr>
+                    <tr>
+                        <td>ITEM 2</td> 
+                        <td><input type="text" name="item2"></td>
+                    </tr>
+                    <tr>
+                        <td>ITEM 3</td> 
+                        <td><input type="text" name="item3"></td>
+                    </tr>
+                    <tr>
+                        <td>ITEM 4</td> 
+                        <td><input type="text" name="item4"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="button" name="calculate" value="CALCULATE" onclick="calc()" id="calcbutt">
+                            <!-- <button name="calculate" value="CALCULATE" onclick="calc()">CHECK</button> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BILL</td> 
+                        <td><input type="text" name="bill"></td>
+                    </tr>
+                    <tr>
+                        <td>DISCOUNT</td> 
+                        <td><input type="text" name="discount"></td>
+                    </tr>
+                    <tr>
+                        <td>NETPAY</td> 
+                        <td><input type="text" name="netpay"></td>
+                    </tr>
+                </table>
+            </center>
+        </form>
+    </div>
+
+</body>
+</html>

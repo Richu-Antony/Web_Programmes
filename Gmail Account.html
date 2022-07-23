@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Account</title>
+    <link rel="stylesheet" href="Gmail Account.css">
+    <script>
+        function check() {
+            var Ufirstname, Ulastname, Umobile, Upass, UCpass, Udob, Uaddress, Ugender;
+
+            Ufn = document.formdata.Ufirstname.value;
+            Uln = document.formdata.Ulastname.value;
+            Um = document.formdata.Umobile.value;
+            Up = document.formdata.Upass.value;
+            UCp = document.formdata.UCpass.value;
+            Ud = document.formdata.Udob.value;
+            Uadd = document.formdata.Uaddress.value;
+            Ugen = document.formdata.Ugender.value;
+
+            if(Ufn == ""){
+                window.alert("Please Enter The Firstname");
+                document.formdata.Ufirstname.focus();
+                return false;           
+            }
+            else if(Uln == ""){
+                window.alert("Please Enter The Lastname");
+                document.formdata.Ulastname.focus();
+                return false; 
+            }
+            else if(Um == ""){
+                window.alert("Please Enter The Mobile No.");
+                document.formdata.Umobile.focus();
+                return false; 
+            }
+           
+            else if (Ud == ""){
+                window.alert("Please Enter The Date of birth");
+                document.formdata.Udob.focus();
+                return false; 
+            }
+            else if (Uadd == ""){
+                window.alert("Please Enter The Address");
+                document.formdata.Uaddress.focus();
+                return false; 
+            }
+            else if (Ugen == ""){
+                window.alert("Please Select The Gender");
+                document.formdata.Ugender.focus();
+                return false; 
+            }
+            else{
+                window.alert("Validation Successfully"); 
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 align="center">Google Account Creation</h1>
+    <div class="main">
+        <form action="" name="formdata">
+            <table>
+                <label for="">FIRSTNAME:
+                    <input type="text" name="Ufirstname" placeholder="Enter your first name" maxlength="30"><br>
+                </label><br><br>
+                <label for="">LASTNAME:
+                    <input type="text" name="Ulastname" placeholder="Enter your last name" maxlength="20"><br>
+                </label><br><br>
+                <label for="">MOBILE NO:
+                    <input type="number" name="Umobile" placeholder="Enter the mobile no." maxlength="12"><br>
+                </label><br><br>
+                <label for="">PASSWORD:
+                    <input type="password" name="Upass" placeholder="Enter the password" maxlength="12" required><br>
+                </label><br><br>
+                <label for="">CONFIRM PASSWORD:
+                    <input type="password" name="UCpass" placeholder="Re-enter the password" maxlength="12" required><br>
+                </label><br><br>
+                <label for="">DOB:
+                    <input type="date" name="Udob"><br>
+                </label><br><br>
+                <label for="">AGE:
+                    <input type="number" name="Upass" placeholder="Enter the age" maxlength="2"><br>
+                </label><br><br>
+                <label for="">GENDER:
+                    <fieldset>
+                        <input type="radio" name="Ugender" value="Male" selected>Male <br>
+                        <input type="radio" name="Ugender" value="Female">Female <br>
+                        <input type="radio" name="Ugender" value="Transgender">Transgender <br>
+                    </fieldset>
+                </label><br><br>
+                <label for="">ADDRESS: <br>
+                    <!--<textarea name="Uaddress" cols="30" rows="10"></textarea> -->
+                    <textarea name="Uaddress"></textarea>
+                </label><br><br>
+                <label for="">NATIONALITY:
+                    <select>
+                        <option value="Indian" selected>India</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Japan">Japan</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </label><br><br>
+                <input type="button" name="submit" value="CREATE AN ACCOUNT" onclick="check()">
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
